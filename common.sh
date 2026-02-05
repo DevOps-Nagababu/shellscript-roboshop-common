@@ -9,14 +9,14 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+mkdir -p $LOG_FOLDER 
+
 check_root(){
     if [ $USERID -ne 0 ]; then
         echo -e "$R Please run the script through $R Root user" | tee -a $LOG_FILE
         exit 1
     fi
 }
-
-mkdir -p $LOG_FOLDER
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
